@@ -1,0 +1,39 @@
+:root {
+  --color__accent-1: #cfe8d7;
+  --color__accent-2: #ebba67;
+}
+
+body {
+  height: 100%;
+  background-color: var(--color__accent-1);
+}
+
+.gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color__accent-2);
+  animation: breathe 16s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* 16 sec / 4 */
+@keyframes breathe {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 100%;
+  }
+  50% {
+    top: 100%;
+  }
+  75% {
+    top: 0%;
+  }
+  100% {
+    top: 0%;
+  }
+}
