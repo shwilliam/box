@@ -1,12 +1,12 @@
 :root {
   --color__accent-1: #cfe8d7;
   --color__accent-2: #ebba67;
+  --rhythm: 20px;
 }
 
 .sr-only {
   position: absolute;
-  left: -10000px;
-  top: auto;
+  top: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -14,12 +14,15 @@
 
 html,
 body {
+  font-family: sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
   height: 100%;
   background-color: var(--color__accent-1);
   overflow: hidden;
 }
 
-main {
+.main {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -27,6 +30,7 @@ main {
 }
 
 .gradient {
+  pointer-events: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -46,22 +50,47 @@ main {
   animation-timing-function: ease-in-out;
 }
 
-.fullscreen-toggle {
+.fullscreen-toggle__label {
+  cursor: pointer;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: var(--rhythm);
+  right: var(--rhythm);
   z-index: 999;
 }
 
-#fullscreen-toggle:checked ~ main .gradient {
+.fullscreen-toggle:checked ~ .main .gradient {
   opacity: 1;
   animation: breathe--fullscreen 16s infinite;
   animation-timing-function: ease-in-out;
 }
 
-#fullscreen-toggle:checked ~ main .circle {
+.fullscreen-toggle:checked ~ .main .circle {
   opacity: 0;
   animation: none;
+}
+
+.about {
+  opacity: 0;
+  z-index: 999;
+  position: absolute;
+  bottom: var(--rhythm);
+  left: var(--rhythm);
+  width: 80%;
+  max-width: 800px;
+  pointer-events: none;
+}
+
+.about-toggle__label {
+  cursor: pointer;
+  position: absolute;
+  top: calc(var(--rhythm) * 2.4);
+  right: var(--rhythm);
+  z-index: 999;
+}
+
+.about-toggle:checked ~ .about {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* 16 sec / 4 */
@@ -85,18 +114,18 @@ main {
 
 @keyframes breathe--fullscreen {
   0% {
-    transform: translateY(0);
+    transform: translateY(100%);
   }
   25% {
-    transform: translateY(100%);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(100%);
+    transform: translateY(0);
   }
   75% {
-    transform: translateY(0);
+    transform: translateY(100%);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(100%);
   }
 }

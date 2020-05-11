@@ -7,15 +7,33 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <label class="sr-only" for="fullscreen-toggle">fullscreen</label>
     <input
       id="fullscreen-toggle"
-      class="fullscreen-toggle"
+      name="fullscreen-toggle"
+      class="sr-only fullscreen-toggle"
       type="checkbox"
-      value="fullscreen"
+    />
+    <input
+      id="about-toggle"
+      name="about-toggle"
+      class="sr-only about-toggle"
+      type="checkbox"
     />
 
-    <main>
+    <label class="fullscreen-toggle__label" for="fullscreen-toggle">
+      fullscreen
+    </label>
+    <label class="about-toggle__label" for="about-toggle">
+      about
+    </label>
+
+    <aside class="about">
+      "Box breathing" is a technique used to regain calm and control thoughts
+      while under stress: four seconds in, four holding, four exhaling, four
+      holding, and repeat.
+    </aside>
+
+    <main class="main">
       <div class="circle"></div>
       <div class="gradient"></div>
     </main>
