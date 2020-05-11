@@ -10,4 +10,4 @@ holding, and repeat.
 
 ## Running locally
 
-Open `src/index.html` in your favorite browser.
+Open `index.html` in your favorite browser.
