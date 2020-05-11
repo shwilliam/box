@@ -3,9 +3,27 @@
   --color__accent-2: #ebba67;
 }
 
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+html,
 body {
   height: 100%;
   background-color: var(--color__accent-1);
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gradient {
@@ -15,12 +33,57 @@ body {
   bottom: 0;
   left: 0;
   background-color: var(--color__accent-2);
+  opacity: 0;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color__accent-2);
+  opacity: 1;
   animation: breathe 16s infinite;
   animation-timing-function: ease-in-out;
 }
 
+.fullscreen-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#fullscreen-toggle:checked ~ main .gradient {
+  opacity: 1;
+  animation: breathe--fullscreen 16s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#fullscreen-toggle:checked ~ main .circle {
+  opacity: 0;
+  animation: none;
+}
+
 /* 16 sec / 4 */
 @keyframes breathe {
+  0% {
+    transform: scale(0.2);
+  }
+  25% {
+    transform: scale(2.5);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+  75% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(0.2);
+  }
+}
+
+@keyframes breathe--fullscreen {
   0% {
     top: 0;
   }
