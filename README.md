@@ -4,10 +4,10 @@
 
 ## About
 
-TODO
+"Box breathing" is a technique used to regain calm and control thoughts
+while under stress: four seconds in, four holding, four exhaling, four
+holding, and repeat.
 
 ## Running locally
 
-```bash
-npx http-server ./src
-```
+Open `src/index.html` in your favorite browser.
