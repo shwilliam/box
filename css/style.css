@@ -4,7 +4,7 @@
   --rhythm: 20px;
 }
 
-.sr-only {
+.visibly-hidden {
   position: absolute;
   top: -10000px;
   width: 1px;
@@ -69,15 +69,20 @@ body {
   animation: none;
 }
 
+.fullscreen-toggle__label:hover,
+.fullscreen-toggle:focus ~ .fullscreen-toggle__label,
+.about-toggle__label:hover,
+.about-toggle:focus ~ .about-toggle__label {
+  text-decoration: underline;
+}
+
 .about {
-  opacity: 0;
-  z-index: 999;
   position: absolute;
   bottom: var(--rhythm);
   left: var(--rhythm);
   width: 80%;
   max-width: 800px;
-  pointer-events: none;
+  z-index: 999;
 }
 
 .about-toggle__label {
@@ -86,11 +91,6 @@ body {
   top: calc(var(--rhythm) * 2.4);
   right: var(--rhythm);
   z-index: 999;
-}
-
-.about-toggle:checked ~ .about {
-  opacity: 1;
-  pointer-events: all;
 }
 
 /* 16 sec / 4 */

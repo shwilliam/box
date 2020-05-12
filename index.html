@@ -4,38 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>box</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <input
       id="fullscreen-toggle"
       name="fullscreen-toggle"
-      class="sr-only fullscreen-toggle"
+      class="visibly-hidden fullscreen-toggle"
       type="checkbox"
     />
     <input
       id="about-toggle"
       name="about-toggle"
-      class="sr-only about-toggle"
+      class="visibly-hidden about-toggle"
       type="checkbox"
     />
 
     <label class="fullscreen-toggle__label" for="fullscreen-toggle">
-      fullscreen
+      <span aria-hidden="true">change animation</span>
+      <span class="visibly-hidden">Change animation</span>
     </label>
     <label class="about-toggle__label" for="about-toggle">
-      about
+      <span aria-hidden="true">about</span>
+      <span class="visibly-hidden">About box breathing</span>
     </label>
 
-    <aside class="about">
-      "Box breathing" is a technique used to regain calm and control thoughts
-      while under stress: four seconds in, four holding, four exhaling, four
-      holding, and repeat.
-    </aside>
-
     <main class="main">
-      <div class="circle"></div>
-      <div class="gradient"></div>
+      <div aria-hidden="true" class="circle"></div>
+      <div aria-hidden="true" class="gradient"></div>
+
+      <section id="about" class="about" aria-live="polite"></section>
+
+      <secion
+        id="breathing-announcements"
+        class="visibly-hidden"
+        aria-live="assertive"
+        role="timer"
+      ></secion>
     </main>
+
+    <script src="./js/breathing-announcer.js"></script>
+    <script src="./js/about-toggle.js"></script>
   </body>
 </html>
