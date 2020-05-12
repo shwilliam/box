@@ -41,8 +41,8 @@ body {
 }
 
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
   background-color: var(--color__accent-2);
   opacity: 1;
@@ -99,10 +99,10 @@ body {
     transform: scale(0.2);
   }
   25% {
-    transform: scale(2.5);
+    transform: scale(1);
   }
   50% {
-    transform: scale(2.5);
+    transform: scale(1);
   }
   75% {
     transform: scale(0.2);
