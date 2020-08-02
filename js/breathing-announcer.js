@@ -4,18 +4,18 @@
   )
 
   const announceBreathingCycle = () => {
-    announcementsContainer.innerText = 'Breathe in for four seconds'
+    announcementsContainer.innerText = 'Breathe in slowly'
 
     setTimeout(() => {
-      announcementsContainer.innerText = 'Hold your breath for four seconds'
+      announcementsContainer.innerText = 'Now, hold your breath'
     }, 4000)
 
     setTimeout(() => {
-      announcementsContainer.innerText = 'Now exhale for four seconds'
+      announcementsContainer.innerText = 'Exhale slowly'
     }, 8000)
 
     setTimeout(() => {
-      announcementsContainer.innerText = 'Hold your breath for four seconds'
+      announcementsContainer.innerText = 'And hold'
     }, 12000)
   }
 

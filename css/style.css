@@ -4,7 +4,7 @@
   --rhythm: 20px;
 }
 
-.visibly-hidden {
+.visually-hidden {
   position: absolute;
   top: -10000px;
   width: 1px;

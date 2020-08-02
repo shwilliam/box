@@ -3,47 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>box</title>
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
     <input
       id="fullscreen-toggle"
       name="fullscreen-toggle"
-      class="visibly-hidden fullscreen-toggle"
+      class="visually-hidden fullscreen-toggle"
       type="checkbox"
     />
     <input
       id="about-toggle"
       name="about-toggle"
-      class="visibly-hidden about-toggle"
+      class="visually-hidden about-toggle"
       type="checkbox"
     />
 
     <label class="fullscreen-toggle__label" for="fullscreen-toggle">
-      <span aria-hidden="true">change animation</span>
-      <span class="visibly-hidden">Change animation</span>
+      change animation
     </label>
-    <label class="about-toggle__label" for="about-toggle">
-      <span aria-hidden="true">about</span>
-      <span class="visibly-hidden">About box breathing</span>
+
+    <label class="about-toggle__label" for="about-toggle" aria-controls="about">
+      about
     </label>
 
     <main class="main">
       <div aria-hidden="true" class="circle"></div>
       <div aria-hidden="true" class="gradient"></div>
 
-      <section id="about" class="about" aria-live="polite"></section>
+      <section id="about" class="about" aria-live="assertive"></section>
 
-      <secion
+      <section
         id="breathing-announcements"
-        class="visibly-hidden"
-        aria-live="assertive"
+        class="visually-hidden"
+        aria-live="polite"
         role="timer"
-      ></secion>
+      ></section>
     </main>
 
-    <script src="./js/breathing-announcer.js"></script>
     <script src="./js/about-toggle.js"></script>
+    <script src="./js/breathing-announcer.js"></script>
   </body>
 </html>
